@@ -4,12 +4,12 @@ class User(models.Model):
     db_table = 'users'
 
     ROLE = (
-        (1, 'Admin')
-        (2, 'Employee')
+        ('AD', 'Admin')
+        ('EM', 'Employee')
     )
     name = models.CharField(max_length=30)
     password = models.CharField(max_length=128)
-    role = models.CharField(max_length=1, choices=ROLE, default=2)
+    role = models.CharField(max_length=2, choices=ROLE, default='EM')
 
 class Schedule(models.Model):
     db_table = 'schedules'
