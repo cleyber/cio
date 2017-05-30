@@ -1,10 +1,11 @@
 from django.db import models
 
+
 class User(models.Model):
     db_table = 'users'
 
     ROLE = (
-        ('AD', 'Admin')
+        ('AD', 'Admin'),
         ('EM', 'Employee')
     )
     name = models.CharField(max_length=30)
@@ -17,17 +18,17 @@ class Schedule(models.Model):
     date = models.DateField()
     start = models.DateTimeField()
     finish = models.DateTimeField()
-    userId = model.ForeignKey(User, on_delete=models.CASCADE)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Paysheet(models.Model):
     db_table = 'paysheet'
 
-    total = models.DecimalField()
+    total = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     start = models.DateTimeField()
     finish = models.DateTimeField()
 
 class Configuration(models.Model):
     db_table = 'configurations'
 
-    price = models.DecimalField()
-    userId = model.ForeignKey(User, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=15, decimal_places=2, default=0)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
