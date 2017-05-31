@@ -13,7 +13,11 @@
     <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
-  <!-- {% block content %}{% endblock %} se puede poner el nombre a la etiqueta endblock, para más legibilidad -->
+  <header>
+    {% block navigation %}{% endblock %}
+  </header>
+
+   {% block content %}{% endblock %}
 
   <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.js"></script>

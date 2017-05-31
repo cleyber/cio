@@ -1,0 +1,17 @@
+<nav class="ui container">
+  <div class="ui secondary menu">
+    <a class="item" href="{% url 'webapp:index' %}">Inicio</a>
+    <a class="item" href="{% url 'webapp:' %}">Horas</a>
+    <a class="item" href="{% url 'webapp:' %}">Configuración</a>
+    <a class="item" href="{% url 'webapp:' %}">Nómina</a>
+    <div class="rigth menu">
+      <div class="item">
+        <div class="ui icon input">
+          <input type="text" placeholder="buscar">
+          <i class="search link icon"></i>
+        </div>
+      </div>
+      <a href="#" class="ui item active">Salir</a>
+    </div>
+  </div>
+</nav>
