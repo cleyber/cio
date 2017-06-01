@@ -7,10 +7,10 @@ def index_admin(request):
     return render(request, 'webapp/admin/index.html')
 
 def login(request):
-    pass
+    return render(request, 'webapp/login.html')
 
-def singup(request):
-    pass
+def signin(request):
+    return render(request, 'webapp/signin.html')
 
 def config(request):
     pass

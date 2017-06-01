@@ -1,0 +1,53 @@
+{% extends "./base.html"%}
+{% block title %}Ingresar{% endblock title%}
+{% block style %}
+  <style media="screen">
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+{% endblock style %}
+
+{% block navigation %}
+  {% include "./user/navigation.html" %}
+{% endblock navigation %}
+
+{% block content %}
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui blue image header">
+      <img src="assets/images/logo.png" class="image">
+      <div class="content">Ingresa a tu cuenta CIO</div>
+    </h2>
+    <form class="ui large form">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="name" placeholder="Nombre">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Contraseña">
+          </div>
+        </div>
+        <button class="ui fluid large primary submit button">Ingresar</button>
+      </div>
+
+      <div class="ui error message"></div>
+    </form>
+
+    <div class="ui message">¿No tienes cuenta? <a href="{% url 'webapp:signin' %}">Regístrate</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

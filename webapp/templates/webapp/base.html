@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,19 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% block title %}Inicio{% endblock %}</title>
+  <!-- Styles customs -->
+    <link rel="stylesheet" href="{% static "webapp/css/index.css" %}">
   <!--Semantic-UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
   <!-- NProgress -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
   <!-- Flatpickr -->
     <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+    {% block style %}{% endblock %}
 </head>
 <body>
   <header>
     {% block navigation %}{% endblock %}
   </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
 
-   {% block content %}{% endblock %}
+   <footer>
+     <div class="ui inverted vertical footer segment">
+      <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+          <div class="four wide column">
+            <p>titulo</p>
+          </div>
+          <div class="four wide column">
+            <span>otro titulo</span>
+          </div>
+        </div>
+      </div>
+     </div>
+   </footer>
 
   <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.js"></script>
@@ -31,5 +51,9 @@
     <script src="https://unpkg.com/flatpickr"></script>
   <!-- Turbolinks   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.3/turbolinks.js"></script>
+  <!-- Script custom -->
+    <script type="text/javascript" src="{% static "webapp/js/index.js" %}">
+
+    </script>
 </body>
 </html>
