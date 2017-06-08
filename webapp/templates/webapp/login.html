@@ -1,15 +1,13 @@
 {% extends "./base.html"%}
+{% load static %}
 {% block title %}Ingresar{% endblock title%}
 {% block style %}
   <style media="screen">
-    body > .grid {
-      height: 100%;
-    }
-    .image {
+  #login {
+    min-height: 100vh;
+  }
+  .image {
       margin-top: -100px;
-    }
-    .column {
-      max-width: 450px;
     }
   </style>
 {% endblock style %}
@@ -19,10 +17,10 @@
 {% endblock navigation %}
 
 {% block content %}
-<div class="ui middle aligned center aligned grid">
-  <div class="column">
+<div class="ui middle aligned center aligned grid container" id="login">
+  <div class="sixteen wide mobile twelve wide tablet seven wide computer column"  >
     <h2 class="ui blue image header">
-      <img src="assets/images/logo.png" class="image">
+      <!-- <img src="{% static "webapp/img/logo.png" %}" class="image"> -->
       <div class="content">Ingresa a tu cuenta CIO</div>
     </h2>
     <form class="ui large form">
