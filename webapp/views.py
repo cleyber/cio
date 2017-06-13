@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from forms import SignIn
 
 def index(request):
     return render(request, 'webapp/user/index.html')
@@ -10,7 +11,13 @@ def login(request):
     return render(request, 'webapp/login.html')
 
 def signin(request):
-    return render(request, 'webapp/signin.html')
+    if request.method == 'POST':
+        form = SignIn(request.POST)
+        if form.is_valid():
+            return render(request, 'webapp/login.html')
+    else:
+        form = SignIn
+    return render(request, 'webapp/signin.html', {'from': form,})
 
 def config(request):
     pass
